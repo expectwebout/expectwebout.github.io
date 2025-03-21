@@ -23,10 +23,11 @@
         .main-table {
             width: 100%;
             border-collapse: collapse;
+            border: 1px solid #000;
         }
         .main-table td {
             padding: 12px;
-            border-bottom: 1px solid #e0e0e0;
+            border: 1px solid #000;
             font-size: 14px;
             line-height: 1.6;
         }
@@ -52,54 +53,56 @@
     <div class="container">
         <table class="main-table">
             <tr>
-                <td colspan="4" class="title">企业信息</td>
+                <td colspan="4" style="text-align: center; font-size: 20px; padding: 15px;">企业信息</td>
             </tr>
             <tr>
-                <td width="25%">名称</td>
-                <td width="25%">绿园区一家人民间肘子饭店</td>
-                <td width="25%">社会信用代码</td>
-                <td width="25%">92220106MA14BB3W3H</td>
+                <td>名称:</td>
+                <td>绿园区一家人民间肘子饭店</td>
+                <td>社会信用代码:</td>
+                <td>92220106MA14BB3W3H</td>
             </tr>
             <tr>
-                <td>法定代表人</td>
+                <td>法定代表人:</td>
                 <td>林永军</td>
-                <td>许可证编号</td>
+                <td>许可证编号:</td>
                 <td>JY22201060154131</td>
             </tr>
             <tr>
-                <td colspan="4">经营场所：吉林省--长春市--绿园区--旺达小区2525号1号楼108室</td>
+                <td>经营场所:</td>
+                <td colspan="3">吉林省--长春市--绿园区--旺达小区2525号1号楼108室</td>
             </tr>
             <tr>
-                <td>发证机构</td>
+                <td>发证机构:</td>
                 <td>长春市市场监督管理局绿园分局</td>
-                <td>签发人</td>
+                <td>签发人:</td>
                 <td>刘威</td>
             </tr>
             <tr>
-                <td>发证日期</td>
+                <td>发证日期:</td>
                 <td>2024-05-14</td>
-                <td>有效期</td>
+                <td>有效期:</td>
                 <td>2027-10-09</td>
             </tr>
+            <tr>
+                <td colspan="4" class="detail-btn" onclick="showDetail()">[企业详细信息]</td>
+            </tr>
         </table>
-        <div class="detail-btn" onclick="showDetail()">[企业详细信息]</div>
     </div>
 
     <!-- 详细信息界面 -->
     <div class="container detail-container" id="detailContainer">
-        <div class="header"></div>
         <table class="main-table">
             <tr>
                 <td>名称:</td>
-                <td>绿园区一家人民间肘子饭店</td>
+                <td colspan="3">绿园区一家人民间肘子饭店</td>
             </tr>
             <tr>
                 <td>经营场所:</td>
-                <td>吉林省--长春市--绿园区--旺达小区2525号1号楼108室</td>
+                <td colspan="3">吉林省--长春市--绿园区--旺达小区2525号1号楼108室</td>
             </tr>
             <tr>
                 <td>住所:</td>
-                <td>吉林省--长春市--绿园区--旺达小区2525号1号楼108室</td>
+                <td colspan="3">吉林省--长春市--绿园区--旺达小区2525号1号楼108室</td>
             </tr>
             <tr>
                 <td>社会信用代码:</td>
@@ -133,7 +136,7 @@
             </tr>
             <tr>
                 <td>是否散装熟食销售:</td>
-                <td>否</td>
+                <td colspan="3">否</td>
             </tr>
             <tr>
                 <td>就餐面积(㎡):</td>
@@ -149,7 +152,7 @@
             </tr>
             <tr>
                 <td>经营项目:</td>
-                <td colspan="3">保健食品销售,热食类食品制售,冷食类食品制售,自制饮品制售</td>
+                <td colspan="3">保健食品销售, 热食类食品制售, 冷食类食品制售, 自制饮品制售</td>
             </tr>
             <tr>
                 <td>经营项目备注:</td>
@@ -187,13 +190,11 @@
             </tr>
             <tr>
                 <td>受理机构:</td>
-                <td>长春市市场监督管理局绿园分局</td>
-                <td>审批机构:</td>
-                <td>长春市市场监督管理局绿园分局</td>
+                <td colspan="3">长春市市场监督管理局绿园分局</td>
             </tr>
             <tr>
                 <td>发证机构:</td>
-                <td>长春市市场监督管理局绿园分局</td>
+                <td colspan="3">长春市市场监督管理局绿园分局</td>
             </tr>
             <tr>
                 <td>日常监管机构:</td>
@@ -201,18 +202,19 @@
                 <td>日常监管人员:</td>
                 <td>张利, 孙欢庆</td>
             </tr>
+            <tr>
+                <td colspan="4" class="detail-btn" onclick="hideDetail()">返回</td>
+            </tr>
         </table>
-        <div style="text-align: center; padding: 10px; cursor: pointer;" onclick="hideDetail()">返回</div>
     </div>
 
     <script>
         function showDetail() {
-            document.querySelector('.detail-container').style.display = 'block';
+            document.getElementById('detailContainer').style.display = 'block';
             document.querySelector('.container:not(.detail-container)').style.display = 'none';
         }
-
         function hideDetail() {
-            document.querySelector('.detail-container').style.display = 'none';
+            document.getElementById('detailContainer').style.display = 'none';
             document.querySelector('.container:not(.detail-container)').style.display = 'block';
         }
     </script>
