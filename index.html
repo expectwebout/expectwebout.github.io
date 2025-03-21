@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>企业信息</title>
     <style>
         body {
@@ -10,214 +10,209 @@
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
         }
-
         .container {
             background-color: white;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            width: 80%;
-            max-width: 800px;
+            margin: 20px;
         }
-
         h1 {
             text-align: center;
             margin-bottom: 20px;
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 10px 0;
         }
-
         table td {
             padding: 8px;
             border: 1px solid #ccc;
             text-align: left;
+            font-size: 14px;
         }
-
         .detail-link {
             text-align: center;
             cursor: pointer;
             background-color: #f9f9f9;
         }
-
         .detail-link:hover {
             background-color: #eaeaea;
         }
-
-        /* 详细信息容器默认隐藏 */
-        #detail-info {
-            display: none;
-            margin-top: 20px;
-        }
+        /* 初始隐藏详细信息 */
+        #main-info { display: block; }
+        #detail-info { display: none; }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="main-info">
         <h1>企业信息</h1>
         <table>
             <tr>
                 <td>名称:</td>
-                <td>长春市金灶台府饭店</td>
+                <td>绿园区永仙花酒楼</td>
                 <td>社会信用代码:</td>
-                <td>91220103333979886B</td>
+                <td>92220106MA14J4TK5L</td>
             </tr>
             <tr>
                 <td>法定代表人:</td>
-                <td>付耀林</td>
+                <td>徐井顺</td>
                 <td>许可证编号:</td>
-                <td>JY22201060154128</td>
+                <td>220103000093446</td>
             </tr>
             <tr>
                 <td>经营场所:</td>
-                <td colspan="3">吉林省--长春市--宽城区-</td>
+                <td colspan="3">吉林省--长春市—绿园区-正阳街23号</td>
             </tr>
             <tr>
                 <td>发证机构:</td>
-                <td>长春市市场监督管理局宽城分局</td>
+                <td>长春市市场监督管理局绿园分局</td>
                 <td>签发人:</td>
-                <td>王子耀</td>
+                <td>徐井顺</td>
             </tr>
             <tr>
                 <td>发证日期:</td>
-                <td>2024-05-1</td>
+                <td>2024-05-14</td>
                 <td>有效期:</td>
                 <td>2027-10-09</td>
             </tr>
             <tr>
-                <td colspan="4" class="detail-link" onclick="showDetails()">[企业详细信息]</td>
+                <td colspan="4" class="detail-link" onclick="toggleInfo()">
+                    [企业详细信息]
+                </td>
             </tr>
         </table>
+    </div>
 
-        <!-- 嵌入详细信息表格 -->
-        <div id="detail-info">
-            <table class="info-table">
-                <tr>
-                    <td>名称:</td>
-                    <td>长春市金灶台府饭店</td>
-                </tr>
-                <tr>
-                    <td>经营场所:</td>
-                    <td>吉林省--长春市--宽城区-</td>
-                </tr>
-                <tr>
-                    <td>住所:</td>
-                    <td>吉林省--长春市--宽城区-</td>
-                </tr>
-                <tr>
-                    <td>社会信用代码:</td>
-                    <td>91220103333979886B</td>
-                    <td>是否门店实体:</td>
-                    <td>是</td>
-                </tr>
-                <tr>
-                    <td>仓储地址:</td>
-                    <td>------</td>
-                    <td>仓储面积:</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>申请副本数:</td>
-                    <td></td>
-                    <td>经济性质:</td>
-                    <td>个体工商户</td>
-                </tr>
-                <tr>
-                    <td>主体业态:</td>
-                    <td>餐饮服务经营者</td>
-                    <td>主体业态大类:</td>
-                    <td>小型餐馆</td>
-                </tr>
-                <tr>
-                    <td>其他主体业态大类:</td>
-                    <td></td>
-                    <td>是否含网络经营:</td>
-                    <td>是</td>
-                </tr>
-                <tr>
-                    <td>是否散装熟食销售:</td>
-                    <td>否</td>
-                </tr>
-                <tr>
-                    <td>就餐面积(㎡):</td>
-                    <td></td>
-                    <td>食品处理区面积(㎡):</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>用餐配送单位:</td>
-                    <td>否</td>
-                    <td>中央厨房:</td>
-                    <td>无</td>
-                </tr>
-                <tr>
-                    <td>经营项目:</td>
-                    <td colspan="3">保健食品销售,热食类食品制售,冷食类食品制售,自制饮品制售</td>
-                </tr>
-                <tr>
-                    <td>经营项目备注:</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>有效期:</td>
-                    <td>5年</td>
-                    <td>职工人数(人):</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>应体检人数(人):</td>
-                    <td></td>
-                    <td>就餐座位数(个):</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>邮政编码:</td>
-                    <td></td>
-                    <td>E-mail:</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>经营面积:</td>
-                    <td></td>
-                    <td>产权人:</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>房屋使用方式:</td>
-                    <td></td>
-                    <td>房屋使用期限:</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>受理机构:</td>
-                    <td>长春市市场监督管理局宽城分局</td>
-                    <td>审批机构:</td>
-                    <td>长春市市场监督管理局宽城分局</td>
-                </tr>
-                <tr>
-                    <td>发证机构:</td>
-                    <td>长春市市场监督管理局宽城分局</td>
-                </tr>
-                <tr>
-                    <td>日常监管机构:</td>
-                    <td>宽城市场监督管理所</td>
-                    <td>日常监管人员:</td>
-                    <td>李宏斌，张力华</td>
-                </tr>
-            </table>
+    <div class="container" id="detail-info">
+        <h1>企业详细信息</h1>
+        <table>
+            <tr>
+                <td>名称:</td>
+                <td>绿园区一家人民间肘子饭店</td>
+            </tr>
+            <tr>
+                <td>经营场所:</td>
+                <td>吉林省--长春市--绿园区--旺达小区2525号1号楼108室</td>
+            </tr>
+            <tr>
+                <td>住所:</td>
+                <td>吉林省--长春市--绿园区--旺达小区2525号1号楼108室</td>
+            </tr>
+            <tr>
+                <td>社会信用代码:</td>
+                <td>92220106MA14BB3W3H</td>
+                <td>是否门店实体:</td>
+                <td>是</td>
+            </tr>
+            <tr>
+                <td>仓储地址:</td>
+                <td>------</td>
+                <td>仓储面积:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>申请副本数:</td>
+                <td></td>
+                <td>经济性质:</td>
+                <td>个体工商户</td>
+            </tr>
+            <tr>
+                <td>主体业态:</td>
+                <td>餐饮服务经营者</td>
+                <td>主体业态大类:</td>
+                <td>小型餐馆</td>
+            </tr>
+            <tr>
+                <td>其他主体业态大类:</td>
+                <td></td>
+                <td>是否含网络经营:</td>
+                <td>是</td>
+            </tr>
+            <tr>
+                <td>是否散装熟食销售:</td>
+                <td>否</td>
+            </tr>
+            <tr>
+                <td>就餐面积(㎡):</td>
+                <td></td>
+                <td>食品处理区面积(㎡):</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>用餐配送单位:</td>
+                <td>否</td>
+                <td>中央厨房:</td>
+                <td>无</td>
+            </tr>
+            <tr>
+                <td>经营项目:</td>
+                <td colspan="3">保健食品销售,热食类食品制售,冷食类食品制售,自制饮品制售</td>
+            </tr>
+            <tr>
+                <td>经营项目备注:</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td>有效期:</td>
+                <td>5年</td>
+                <td>职工人数(人):</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>应体检人数(人):</td>
+                <td></td>
+                <td>就餐座位数(个):</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>邮政编码:</td>
+                <td></td>
+                <td>E-mail:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>经营面积:</td>
+                <td></td>
+                <td>产权人:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>房屋使用方式:</td>
+                <td></td>
+                <td>房屋使用期限:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>受理机构:</td>
+                <td>长春市市场监督管理局绿园分局</td>
+                <td>审批机构:</td>
+                <td>长春市市场监督管理局绿园分局</td>
+            </tr>
+            <tr>
+                <td>发证机构:</td>
+                <td>长春市市场监督管理局绿园分局</td>
+            </tr>
+            <tr>
+                <td>日常监管机构:</td>
+                <td>春城市场监督管理所</td>
+                <td>日常监管人员:</td>
+                <td>张利, 孙欢庆</td>
+            </tr>
+        </table>
+        <div class="detail-link" onclick="toggleInfo()">
+            [返回主信息]
         </div>
     </div>
 
     <script>
-        function showDetails() {
+        function toggleInfo() {
+            const mainInfo = document.getElementById('main-info');
             const detailInfo = document.getElementById('detail-info');
+            mainInfo.style.display = mainInfo.style.display === 'block' ? 'none' : 'block';
             detailInfo.style.display = detailInfo.style.display === 'block' ? 'none' : 'block';
         }
     </script>
