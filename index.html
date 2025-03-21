@@ -5,73 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>企业信息</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        * {
             margin: 0;
             padding: 0;
-            min-height: 100vh;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
         }
         .container {
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            background: white;
             margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        h1 {
+        .header {
             text-align: center;
-            margin-bottom: 20px;
+            padding: 20px;
+            font-size: 20px;
+            background-color: #f0f0f0;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
         }
-        table {
+        .main-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 10px 0;
         }
-        table td {
-            padding: 8px;
-            border: 1px solid #ccc;
-            text-align: left;
+        .main-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
             font-size: 14px;
+            line-height: 1.6;
         }
-        .detail-link {
+        .detail-btn {
             text-align: center;
-            cursor: pointer;
             background-color: #f9f9f9;
+            cursor: pointer;
         }
-        .detail-link:hover {
-            background-color: #eaeaea;
+        .detail-container {
+            display: none;
         }
-        /* 初始隐藏详细信息 */
-        #main-info { display: block; }
-        #detail-info { display: none; }
     </style>
 </head>
 <body>
-    <div class="container" id="main-info">
-        <h1>企业信息</h1>
-        <table>
+    <!-- 主界面 -->
+    <div class="container">
+        <div class="header">124.234.143.81</div>
+        <table class="main-table">
+            <tr>
+                <td colspan="4" style="text-align: center; font-size: 18px; padding: 20px 0;">企业信息</td>
+            </tr>
             <tr>
                 <td>名称:</td>
-                <td>绿园区永仙花酒楼</td>
+                <td>绿园区一家人民间肘子饭店</td>
                 <td>社会信用代码:</td>
-                <td>92220106MA14J4TK5L</td>
+                <td>92220106MA14BB3W3H</td>
             </tr>
             <tr>
                 <td>法定代表人:</td>
-                <td>徐井顺</td>
+                <td>林永军</td>
                 <td>许可证编号:</td>
-                <td>220103000093446</td>
+                <td>JY22201060154131</td>
             </tr>
             <tr>
                 <td>经营场所:</td>
-                <td colspan="3">吉林省--长春市—绿园区-正阳街23号</td>
+                <td colspan="3">吉林省--长春市--绿园区--旺达小区2525号1号楼108室</td>
             </tr>
             <tr>
                 <td>发证机构:</td>
                 <td>长春市市场监督管理局绿园分局</td>
                 <td>签发人:</td>
-                <td>徐井顺</td>
+                <td>刘威</td>
             </tr>
             <tr>
                 <td>发证日期:</td>
@@ -79,17 +84,16 @@
                 <td>有效期:</td>
                 <td>2027-10-09</td>
             </tr>
-            <tr>
-                <td colspan="4" class="detail-link" onclick="toggleInfo()">
-                    [企业详细信息]
-                </td>
+            <tr class="detail-btn" onclick="showDetail()">
+                <td colspan="4">[企业详细信息]</td>
             </tr>
         </table>
     </div>
 
-    <div class="container" id="detail-info">
-        <h1>企业详细信息</h1>
-        <table>
+    <!-- 详细信息界面 -->
+    <div class="container detail-container" id="detailContainer">
+        <div class="header">124.234.143.81</div>
+        <table class="main-table">
             <tr>
                 <td>名称:</td>
                 <td>绿园区一家人民间肘子饭店</td>
@@ -203,17 +207,18 @@
                 <td>张利, 孙欢庆</td>
             </tr>
         </table>
-        <div class="detail-link" onclick="toggleInfo()">
-            [返回主信息]
-        </div>
+        <div style="text-align: center; padding: 10px; cursor: pointer;" onclick="hideDetail()">返回</div>
     </div>
 
     <script>
-        function toggleInfo() {
-            const mainInfo = document.getElementById('main-info');
-            const detailInfo = document.getElementById('detail-info');
-            mainInfo.style.display = mainInfo.style.display === 'block' ? 'none' : 'block';
-            detailInfo.style.display = detailInfo.style.display === 'block' ? 'none' : 'block';
+        function showDetail() {
+            document.querySelector('.detail-container').style.display = 'block';
+            document.querySelector('.container:not(.detail-container)').style.display = 'none';
+        }
+
+        function hideDetail() {
+            document.querySelector('.detail-container').style.display = 'none';
+            document.querySelector('.container:not(.detail-container)').style.display = 'block';
         }
     </script>
 </body>
