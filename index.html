@@ -20,14 +20,6 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .header {
-            text-align: center;
-            padding: 20px;
-            font-size: 20px;
-            background-color: #f0f0f0;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-        }
         .main-table {
             width: 100%;
             border-collapse: collapse;
@@ -40,59 +32,62 @@
         }
         .detail-btn {
             text-align: center;
-            background-color: #f9f9f9;
+            padding: 15px;
             cursor: pointer;
+            color: #666;
         }
         .detail-container {
             display: none;
+        }
+        .title {
+            text-align: center;
+            font-size: 20px;
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
         }
     </style>
 </head>
 <body>
     <!-- 主界面 -->
     <div class="container">
-        <div class="header">124.234.143.81</div>
         <table class="main-table">
             <tr>
-                <td colspan="4" style="text-align: center; font-size: 18px; padding: 20px 0;">企业信息</td>
+                <td colspan="4" class="title">企业信息</td>
             </tr>
             <tr>
-                <td>名称:</td>
-                <td>绿园区一家人民间肘子饭店</td>
-                <td>社会信用代码:</td>
-                <td>92220106MA14BB3W3H</td>
+                <td width="25%">名称</td>
+                <td width="25%">绿园区一家人民间肘子饭店</td>
+                <td width="25%">社会信用代码</td>
+                <td width="25%">92220106MA14BB3W3H</td>
             </tr>
             <tr>
-                <td>法定代表人:</td>
+                <td>法定代表人</td>
                 <td>林永军</td>
-                <td>许可证编号:</td>
+                <td>许可证编号</td>
                 <td>JY22201060154131</td>
             </tr>
             <tr>
-                <td>经营场所:</td>
-                <td colspan="3">吉林省--长春市--绿园区--旺达小区2525号1号楼108室</td>
+                <td colspan="4">经营场所：吉林省--长春市--绿园区--旺达小区2525号1号楼108室</td>
             </tr>
             <tr>
-                <td>发证机构:</td>
+                <td>发证机构</td>
                 <td>长春市市场监督管理局绿园分局</td>
-                <td>签发人:</td>
+                <td>签发人</td>
                 <td>刘威</td>
             </tr>
             <tr>
-                <td>发证日期:</td>
+                <td>发证日期</td>
                 <td>2024-05-14</td>
-                <td>有效期:</td>
+                <td>有效期</td>
                 <td>2027-10-09</td>
             </tr>
-            <tr class="detail-btn" onclick="showDetail()">
-                <td colspan="4">[企业详细信息]</td>
-            </tr>
         </table>
+        <div class="detail-btn" onclick="showDetail()">[企业详细信息]</div>
     </div>
 
     <!-- 详细信息界面 -->
     <div class="container detail-container" id="detailContainer">
-        <div class="header">124.234.143.81</div>
+        <div class="header"></div>
         <table class="main-table">
             <tr>
                 <td>名称:</td>
