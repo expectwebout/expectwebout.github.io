@@ -13,10 +13,12 @@
         }
         body {
             background-color: #f5f5f5;
+            font-size: 14px; /* 适配手机字体大小 */
         }
         .container {
             background: white;
-            margin: 20px;
+            max-width: 66.66%; /* 占屏幕三分之二 */
+            margin: 20px auto; /* 居中 */
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
@@ -26,25 +28,18 @@
             border: 1px solid #000;
         }
         .main-table td {
-            padding: 12px;
+            padding: 8px; /* 缩小内边距适配手机 */
             border: 1px solid #000;
-            font-size: 14px;
-            line-height: 1.6;
+            white-space: nowrap; /* 防止文字换行 */
         }
         .detail-btn {
             text-align: center;
-            padding: 15px;
+            padding: 10px;
             cursor: pointer;
             color: #666;
         }
         .detail-container {
             display: none;
-        }
-        .title {
-            text-align: center;
-            font-size: 20px;
-            padding: 20px;
-            border-bottom: 1px solid #e0e0e0;
         }
     </style>
 </head>
@@ -53,7 +48,7 @@
     <div class="container">
         <table class="main-table">
             <tr>
-                <td colspan="4" style="text-align: center; font-size: 20px; padding: 15px;">企业信息</td>
+                <td colspan="4" style="text-align: center; font-size: 18px; padding: 12px;">企业信息</td>
             </tr>
             <tr>
                 <td>名称:</td>
